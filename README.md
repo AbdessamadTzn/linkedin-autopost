@@ -32,11 +32,10 @@ created: 2026-09-15
 Cache what's read. Queue what's written.
 
 ...
-
-techfi24.com
 ```
 
-La signature `techfi24.com` est ajoutée par le script, jamais par le LLM.
+Le post est publié tel que le modèle l'écrit : aucune signature ni lien n'est
+ajouté par le script.
 
 ## Prérequis
 

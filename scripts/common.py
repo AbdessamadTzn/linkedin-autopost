@@ -24,11 +24,8 @@ PUBLISHED_DIR = REPO_ROOT / "posts" / "published"
 
 # --- Constantes de validation ---------------------------------------------
 
-# Longueur maximale du texte d'un post (signature exclue).
+# Longueur maximale du texte d'un post.
 MAX_POST_LENGTH = 450
-
-# Signature ajoutée par le script, jamais par le LLM.
-SIGNATURE = "techfi24.com"
 
 # Champs obligatoires d'un post renvoyé par Groq.
 REQUIRED_FIELDS = ("slug", "area", "concept", "source", "text")
@@ -167,9 +164,8 @@ def load_existing_concepts() -> list[str]:
 # --- Écriture / déplacement -----------------------------------------------
 
 def _render_body(text: str) -> str:
-    """Corps du fichier : texte du post, une ligne vide, puis la signature."""
-    body = text.rstrip("\n")
-    return f"{body}\n\n{SIGNATURE}"
+    """Corps du fichier : le texte du post, tel quel (aucune signature ajoutée)."""
+    return text.rstrip("\n")
 
 
 def build_post(post: dict, created: str | None = None) -> "frontmatter.Post":
@@ -210,5 +206,5 @@ def oldest_queue_file() -> Path | None:
 
 
 def post_commentary(fm_post: "frontmatter.Post") -> str:
-    """Texte à publier (corps du fichier, signature comprise)."""
+    """Texte à publier (corps du fichier)."""
     return fm_post.content.rstrip("\n")

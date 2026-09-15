@@ -150,7 +150,6 @@ def main() -> None:
             print(f"source  : {post['source']}")
             print()
             print(post["text"])
-            print(f"\n{common.SIGNATURE}")
         return
 
     created = dt.date.today().isoformat()
