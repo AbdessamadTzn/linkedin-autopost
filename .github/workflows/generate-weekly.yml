@@ -1,0 +1,45 @@
+name: Génération hebdomadaire des posts
+
+on:
+  schedule:
+    # Dimanche 16:23 UTC.
+    - cron: "23 16 * * 0"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Date du jour
+        id: date
+        run: echo "date=$(date -u +%Y-%m-%d)" >> "$GITHUB_OUTPUT"
+
+      - name: Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Dépendances
+        run: pip install -r requirements.txt
+
+      - name: Générer les posts
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+        run: python scripts/generate_posts.py --summary-path pr_body.md
+
+      - name: Ouvrir la Pull Request
+        uses: peter-evans/create-pull-request@v6
+        with:
+          branch: posts/week-${{ steps.date.outputs.date }}
+          title: "Posts de la semaine du ${{ steps.date.outputs.date }}"
+          body-path: pr_body.md
+          commit-message: "Ajoute les posts de la semaine du ${{ steps.date.outputs.date }}"
+          add-paths: posts/queue
+          delete-branch: true

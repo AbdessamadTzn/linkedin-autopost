@@ -1,0 +1,5 @@
+groq
+requests
+python-frontmatter
+python-dotenv
+pytest
