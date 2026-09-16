@@ -4,6 +4,8 @@ area: data engineering
 concept: Batch vs microbatch
 source: Fundamentals of Data Engineering
 created: '2026-09-15'
+published_at: '2026-09-16T06:42:11.954080+00:00'
+post_id: urn:li:share:7505878688215863296
 ---
 
 Batch big, microbatch fast.
