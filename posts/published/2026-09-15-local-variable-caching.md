@@ -4,6 +4,8 @@ area: Python performance
 concept: Local variable caching
 source: High Performance Python
 created: '2026-09-15'
+published_at: '2026-09-22T06:41:48.695247+00:00'
+post_id: urn:li:share:7508052917342470144
 ---
 
 Pull once, use many.
