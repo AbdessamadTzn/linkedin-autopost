@@ -4,6 +4,8 @@ area: data engineering
 concept: exactly-once semantics
 source: Designing Data-Intensive Applications
 created: '2026-09-20'
+published_at: '2026-09-28T06:57:11.382249+00:00'
+post_id: urn:li:share:7510231114326929408
 ---
 
 Process each event a single time.
