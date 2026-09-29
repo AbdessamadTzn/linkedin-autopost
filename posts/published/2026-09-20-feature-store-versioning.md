@@ -4,6 +4,8 @@ area: MLOps
 concept: feature store versioning
 source: Designing Machine Learning Systems
 created: '2026-09-20'
+published_at: '2026-09-29T06:44:53.366295+00:00'
+post_id: urn:li:share:7510590406900727811
 ---
 
 Feature pipelines need immutable snapshots.
