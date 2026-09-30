@@ -4,6 +4,8 @@ area: LLMs and RAG
 concept: prompt chaining
 source: AI Engineering
 created: '2026-09-20'
+published_at: '2026-09-30T06:45:22.124184+00:00'
+post_id: urn:li:share:7510952914887061505
 ---
 
 One prompt can call another.
