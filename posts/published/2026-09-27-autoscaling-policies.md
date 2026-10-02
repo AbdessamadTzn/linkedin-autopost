@@ -4,6 +4,8 @@ area: cloud infrastructure
 concept: Autoscaling policies
 source: AWS Well-Architected Framework
 created: '2026-09-27'
+published_at: '2026-10-02T12:34:59.125841+00:00'
+post_id: urn:li:share:7511765674856292352
 ---
 
 Scale right, pay light.
